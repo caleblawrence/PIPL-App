@@ -54,7 +54,6 @@ pyflakes==1.5.0
 pyinotify==0.9.6
 PyNaCl==1.1.2
 pyOpenSSL==16.2.0
-python-apt==1.4.0b3
 python-cloudfiles==1.7.10
 python-crontab==2.2.4
 python-dateutil==2.6.1
