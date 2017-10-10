@@ -1,0 +1,213 @@
+{% extends "base.html" %}
+
+{% load static from staticfiles %}
+
+{% block content %}
+
+<!-- format of people passed in: ['people'][unique_name]['names']  -->
+
+
+   <!-- variables passed in:  names, emails, phones, gender, dob, addresses, jobs, educations, image, urls -->
+<br>
+
+
+<h1>Total people found: {{ totalPeople }} </h1>
+  <div class="row"> 
+
+{% for thing in people.items %}
+
+   <div class="col-md-6">
+
+
+<br>
+<br>
+<br>
+
+
+  
+   <h1>Match #{{ forloop.counter }}:</h1>
+
+
+
+
+{% if thing.1.names %}
+   <h4>Names</h4>
+
+
+   {% for item in thing.1.names %}
+   {% for key, value in item.items %}
+   {% if key == 'display' %}
+   <p>{{ value }}</p>
+   {% else %}
+   {% endif %}
+   {% endfor %}
+   {% endfor %}
+   {% endif %}
+
+
+  {% if thing.1.emails %}
+
+<br>
+   <h4>Email Addresses</h4>
+   {% for item in thing.1.emails %}
+   {% for key, value in item.items %}
+   {% if key == 'display' %}
+   <p>{{ value }}</p>
+   {% else %}
+   {% endif %}
+   {% endfor %}
+   {% endfor %}
+      {% endif %}
+
+
+  {% if thing.1.phones %}
+
+<br>
+   <h4>Phone Numbers</h4>
+
+   {% for item in thing.1.phones %}
+   {% for key, value in item.items %}
+   {% if key == '@last_seen' %}
+   <p>Last seen {{ value }}: </p>
+   {% else %}
+   {% endif %}
+   {% if key == 'display' %}
+   <p>{{ value }}</p>
+   {% else %}
+   {% endif %}
+   {% endfor %}
+   {% endfor %}
+   {% endif %}
+
+<br>
+  {% if thing.1.gender %}
+
+   <h4>Gender</h4>
+
+   {% for key, value in thing.1.gender.items %}
+   {% if key == 'display' %}
+   <p>{{ value }}</p>
+   {% else %}
+   {% endif %}
+   {% endfor %}
+      {% endif %}
+
+<br>
+  {% if thing.1.dob %}
+
+   <h4>Age/Date of Birth</h4>
+
+   {% for key, value in thing.1.dob.items %}
+   {% if key == 'display' %}
+   <p>{{ value }}</p>
+   {% else %}
+   {% endif %}
+   {% endfor %}
+   <br>
+      {% endif %}
+
+  {% if thing.1.addresses %}
+
+   <h4>Addresses</h4>
+   {% for item in thing.1.addresses %}
+   {% for key, value in item.items %}
+   {% if key == '@last_seen' %}
+   <p>Last seen {{ value }}: </p>
+   {% else %}
+   {% endif %}
+   {% if key == 'display' %}
+   <p>{{ value }}</p>
+   {% else %}
+   {% endif %}
+   {% endfor %}
+   {% endfor %}
+
+   <br>
+      {% endif %}
+
+        {% if thing.1.jobs %}
+
+   <h4>Jobs</h4>
+
+ 
+     {% for item in thing.1.jobs %}
+   {% for key, value in item.items %}
+   {% if key == 'display' %}
+   <p>{{ value }}</p>
+   {% else %}
+   {% endif %}
+   {% endfor %}
+   {% endfor %}
+
+<br>
+      {% endif %}
+        {% if thing.1.educations %}
+
+
+  <h4>Education</h4>
+
+       {% for item in thing.1.educations %}
+   {% for key, value in item.items %}
+   {% if key == 'display' %}
+   <p>{{ value }}</p>
+   {% else %}
+   {% endif %}
+   {% endfor %}
+   {% endfor %}
+         {% endif %}
+
+
+<br>
+        {% if thing.1.urls %}
+
+  <h4>Social Networks/Profiles</h4>
+
+   {% for item in thing.1.urls %}
+   {% for key, value in item.items %}
+   {% if key == '@domain' %}
+   <p>{{ value }}: </p>
+   {% else %}
+   {% endif %}
+   {% if key == 'display' %}
+   <a href="{{value}}"><p>{{ value }}</p></a>
+   {% else %}
+   {% endif %}
+   {% endfor %}
+   {% endfor %}
+            {% endif %}
+
+
+  
+
+
+    {% if thing.1.images %}
+
+
+  <h4>Images</h4>
+
+{% for item in thing.1.images %}
+   {% for key, value in item.items %}
+   {% if key == 'url' %}
+    <img src="{{ value }}">
+   {% else %}
+   {% endif %}
+
+   {% endfor %}
+   {% endfor %}
+    {% endif %}
+
+
+
+</div> <!--end row-->
+
+       {% endfor %} <!-- end loop through people elements -->
+
+</div> <!--end row-->
+
+
+
+
+
+
+
+{% endblock %}

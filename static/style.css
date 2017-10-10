@@ -1,0 +1,98 @@
+
+}
+#input-form .col-sm-4 {
+	padding-bottom: 20px !important;
+}
+
+#input-form .col-sm-6 {
+	padding-bottom: 20px !important;
+}
+
+#input-form .col-xs-12{
+	padding-bottom: 20px !important;
+}
+
+
+header {
+    height: 150px;
+    background-color: #292b2c; !important;
+    display: block !important;
+    margin: 0 auto !important;
+    align-items: center;
+    border-bottom: .5px solid #171616;
+  
+}
+
+
+body {
+  font-family: "Lato";
+}
+
+img.center {
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+img.center2 {
+    display: block;
+    margin: 0 auto;
+}
+
+.center {
+    height:  100px;
+    width: auto;
+}
+
+.navbar-nav {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+}
+
+.navbar-nav > li {
+    display: inline-block;
+    float:none;
+}
+
+a.nav-link {
+    color: white !important;
+}
+
+#pipl-logo  {
+    float: left;
+    height: 70px;
+    width: auto;
+    padding-right: 10px;
+}
+
+#search {
+    font-size: 3.3em;
+    font-weight: bold;
+    margin-left: 10px !important;
+    padding-top: 8px !important;
+}
+
+footer {
+    width: 100%;
+    background-color: #292b2c; !important;
+    color: white;
+    height: 60px;
+    vertical-align: middle;
+
+
+
+}
+
+footer > center {
+    padding-top: 15px;
+    vertical-align: middle;
+    text-align: middle;
+
+}
+
+.form-control {
+    margin-bottom: 10px !important;
+}
+

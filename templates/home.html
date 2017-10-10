@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% load static from staticfiles %}
+
+{% block content %}
+
+
+
+<br>
+
+   <div class="container">
+     <img id="pipl-logo" class="center" src="{% static "pipl.png" %}" width="200" alt="Logo Thing main logo">
+
+   <h1 id = "search">Search</h1>
+<br>
+    <p>Please enter all the information you have about the person you're searching for, at least one field is required: Email/Phone/Username/Search Pointer/Name (First + Last).</p>
+
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.errors}}
+    {{ form.email }}
+    {{ form.phone }}
+    {{ form.first_name }}
+    {{ form.last_name }}
+    {{ form.middle_name }}
+    {{ form.country_code }}
+    {{ form.state }}
+    {{ form.city }}
+    {{ form.username }}
+    {{ form.age }}
+
+
+
+
+
+
+    <input type="submit" value="Submit" />
+</form>
+
+</div>
+
+<br>
+<br>
+<br>
+
+
+{% endblock %}

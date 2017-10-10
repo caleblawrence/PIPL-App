@@ -1,0 +1,74 @@
+
+
+{% load static from staticfiles %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static "style.css" %}"/>
+    <title>{% block title %}4theOne PIPL Search{% endblock %}</title>
+
+
+    <!-- Chart.js files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+    <!-- Boostrap Files -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+  
+
+    <!-- Data Tables Filse -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.css"/>
+ 
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.js"></script>
+
+    <script type="text/javascript" src="{% static "scripts.js" %}"></script>
+
+    <!-- Inline Style - this doesn't work when you put it in the external style sheet-->
+    <style>.dataTables_filter { width: 20%; float: left !important; text-align: left !important; padding-left: 2px; }</style>
+</head>
+
+<body>
+<header role="banner" style = "logo-main">
+  <img id="logo-main" class="center" src="{% static "logo_without_text.png" %}" width="200" alt="Logo Thing main logo">
+  <img id="logo-main" class="center2" src="{% static "text.png" %}" width="180" alt="Logo Thing main logo">
+
+  </header>
+
+ <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      
+
+     
+    </ul>
+  </div>
+</nav>
+<br>
+
+   <div class="container-fluid">
+
+   {% block content %}{% endblock %}
+
+    
+  </div>
+</body>
+
+<footer>
+  <center>Copyright 2017 4theOne Foundation | All Rights Reserved</center>
+</footer>
+</html>
