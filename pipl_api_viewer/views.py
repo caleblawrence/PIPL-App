@@ -73,7 +73,7 @@ def index(request):
 				# loop through possible persons
 				for person in json_response["possible_persons"]:
 					totalPeople += 1
-					print "printing person"
+					#print "printing person"
 					#pprint.pprint(person)
 					unique_name = person["@search_pointer"]
 					context["people"][unique_name] = {}
