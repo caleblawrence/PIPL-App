@@ -37,7 +37,7 @@ def index(request):
 
 			# loop through form and organize it into a query for the PIPL Api
 			piplQuery = {}
-			for element, value in newDict.iteritems(): 
+			for element, value in newDict.items(): 
 				piplQuery[element] = value
 
 			## UNCOMMENT HERE TO GET OUT OF TESTING 
