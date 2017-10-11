@@ -31,7 +31,7 @@ def index(request):
 
 			# get rid of elements in form that are emtpy
 			newDict={}
-			for element, value in form.cleaned_data.iteritems(): 
+			for element, value in form.cleaned_data.items(): 
 				if value != "":
 					newDict[element] = value
 
