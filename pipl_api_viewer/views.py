@@ -27,7 +27,7 @@ def index(request):
 		form = PIPLSearch(request.POST)
 		# check whether it's valid:
 		if form.is_valid():
-			print(form.cleaned_data)
+			#print(form.cleaned_data)
 
 			# get rid of elements in form that are emtpy
 			newDict={}
@@ -42,15 +42,14 @@ def index(request):
 
 			## UNCOMMENT HERE TO GET OUT OF TESTING 
 
-			piplQuery["api_key"] ='BUSINESS-PREMIUM-DEMO-c8wuzpg3qklawoidqln3cgxx'
-			print("****** printing query *******")
-			pprint.pprint(piplQuery)
+			piplQuery["api_key"] ='samples8bqeuscxayrpen8bu'
+			#pprint.pprint(piplQuery)
 			request2 = SearchAPIRequest(**literal_eval(str(piplQuery)))
 
 			#request2 = SearchAPIRequest(first_name=u'Caleb', last_name=u'Lawrence', api_key='vqnx9j3dfjxyq5sgmnspgvij')
 			search_response = request2.send()
 			json_response = search_response.to_dict()
-			pprint.pprint(json_response)
+			#pprint.pprint(json_response)
 			### UNCOMMENT HERE TO LOAD JSON TO FILE FOR FUTURE TESTING
 
 			# with open('multiplepeople.json', 'w') as outfile:
