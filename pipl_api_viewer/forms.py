@@ -2,7 +2,7 @@ from django import forms
 
 class PIPLSearch(forms.Form):
     email = forms.CharField(label='Email', max_length=100, required=False, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Email' }))
-    phone = forms.CharField(label='Phone', max_length=100, required=False, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Phone' }))
+    raw_phone = forms.IntegerField(label='Phone', required=False, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Phone' }))
     first_name = forms.CharField(label='First Name', max_length=100, required=False, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'First Name' }))
     last_name = forms.CharField(label='Last Name', max_length=100, required=False, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Last Name' }))
     middle_name = forms.CharField(label='Middle Name', max_length=100, required=False, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Middle Name' }))
