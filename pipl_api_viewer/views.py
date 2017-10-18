@@ -15,10 +15,13 @@ from ast import literal_eval
 import csv
 import json
 import operator
+from django.contrib.auth.decorators import login_required
+from settings_secret import *
 
 
 
 
+@login_required
 def index(request):
 	latest_testresult_list = "test"
 
@@ -42,7 +45,7 @@ def index(request):
 
 			## UNCOMMENT HERE TO GET OUT OF TESTING 
 
-			piplQuery["api_key"] ='samples8bqeuscxayrpen8bu'
+			piplQuery["api_key"] = api_key
 			#pprint.pprint(piplQuery)
 			request2 = SearchAPIRequest(**literal_eval(str(piplQuery)))
 
@@ -186,3 +189,5 @@ def response(request):
 	context = {'latest_testresult_list': latest_testresult_list}
 	return render(request, 'response.html', context)
     #return HttpResponse("Hello, world. You're at the polls index.")
+
+

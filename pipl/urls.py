@@ -15,10 +15,18 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
+
+from . import views
+
 
 urlpatterns = [
-    url(r'^$', include('pipl_api_viewer.urls')),
+    url('^accounts/', include('django.contrib.auth.urls')),
+    url(r'^logout/$', auth_views.logout, name='logout'),
+    url(r'^$', views.intelLinks, name='intelLinks'),
+    #url(r'^$', include('pipl_api_viewer.urls')),
     url(r'^pipl/', include('pipl_api_viewer.urls'), name='pipl_api_viewer'),
+    url(r'^intelLinks/', views.intelLinks, name='intelLinks'),
     url(r'^admin/', admin.site.urls),
 
 
