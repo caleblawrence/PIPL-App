@@ -1,2 +1,3 @@
 pipl_api_viewer/settings_secret.py
+pipl_api_viewer/*.pyc
 *.pyc
